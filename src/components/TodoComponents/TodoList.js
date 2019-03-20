@@ -1,11 +1,9 @@
 import React from "react";
-// import Todo from "../TodoComponents/Todo";
 
 const TodoList = props => {
-  console.log(props);
   return (
-    <div className="todolist-container">
-      <p>{props.todoDisplay.task}</p>
+    <div className="todoitem-container">
+      <p onClick={props.completeTask}>{props.todoDisplay.task}</p>
     </div>
   );
 };

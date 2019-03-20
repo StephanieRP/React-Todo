@@ -1,5 +1,5 @@
 import React from "react";
-import Todo from "../src/components/TodoComponents/Todo";
+// import Todo from "../src/components/TodoComponents/Todo";
 import TodoList from "../src/components/TodoComponents/TodoList";
 import TodoForm from "../src/components/TodoComponents/TodoForm";
 
@@ -30,17 +30,19 @@ const todos = [
 class App extends React.Component {
   constructor() {
     super();
+    let idName = Date.now();
+
     this.state = {
       todoList: todos,
       task: "",
-      id: "",
+      id: idName,
       completed: ""
     };
   }
 
   inputTask = event => {
     this.setState({
-      [event.target.name]: event.target.value
+      task: event.target.value
     });
   };
 
@@ -48,13 +50,29 @@ class App extends React.Component {
     event.preventDefault();
     const newTask = {
       task: this.state.task,
-      id: Date.now(),
-      completed: this.state.completed
+      id: this.state.id,
+      completed: false
     };
     this.setState({
-      todoList: [...this.state.todoList, newTask]
+      todoList: [...this.state.todoList, newTask],
+      task: ""
     });
   };
+
+  // completeTask = id => {
+  //   this.setState(prevState => {
+  //     const complete = prevState.todoList.map(task => {
+  //       if (task.id === id) {
+  //         task.completed = !task.completed;
+  //         task.style.textDecoration = "line-through";
+  //       }
+  //       return task;
+  //     });
+  //     return {
+  //       task: complete
+  //     };
+  //   });
+  // };
 
   render() {
     return (
@@ -64,10 +82,16 @@ class App extends React.Component {
           task={this.state.task}
           inputTask={this.inputTask}
           addTask={this.addTask}
+          clearInput={this.clearInput}
         />
         <div className="todolist">
           {this.state.todoList.map((todo, index) => (
-            <TodoList key={index} todoDisplay={todo} />
+            <TodoList
+              key={todo.id}
+              todoDisplay={todo}
+              completed={todo.completed}
+              completeTask={this.completeTask}
+            />
           ))}
         </div>
       </div>
