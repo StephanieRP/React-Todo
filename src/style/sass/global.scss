@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+h1 {
+  font-size: 5rem;
+  text-align: center;
+  color: white;
+}
+
+.app {
+  width: 50%;
+  margin: 1rem auto;
+  background: $bg;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+::placeholder {
+  font-family: "Roboto", sans-serif;
+  color: white;
+}
