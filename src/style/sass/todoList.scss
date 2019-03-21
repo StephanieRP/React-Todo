@@ -1,0 +1,18 @@
+.todo-label {
+  padding: 5px;
+  font-size: 2rem;
+  display: block;
+  background: blueviolet;
+  margin: 10px auto;
+  width: 40%;
+  text-align: center;
+  color: white;
+  input {
+    outline-color: yellow;
+  }
+}
+
+.complete {
+  text-decoration: line-through;
+  background: blue;
+}

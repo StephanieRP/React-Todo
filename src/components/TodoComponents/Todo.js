@@ -2,9 +2,13 @@ import React from "react";
 
 const Todo = props => {
   return (
-    <div className="todo-container">
-      <p>{props.todoDisplay.task}</p>
-    </div>
+    <label
+      className={`todo-label${props.todo.completed ? " complete" : ""}`}
+      onChange={() => props.completeTask(props.todo.id)}
+    >
+      <input type="checkbox" className="todo-label-text" />
+      {props.todo.task}
+    </label>
   );
 };
 

@@ -1,3 +1,65 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+.app {
+  width: 50%;
+  margin: 1rem auto;
+  background: burlywood;
+}
+
+.todo-form-container .todo-form {
+  display: flex;
+  justify-content: center;
+}
+.todo-form-container .todo-form input {
+  border: none;
+  border-bottom: green solid 2px;
+  padding: 10px;
+  margin: 5px;
+  outline-color: yellow;
+}
+.todo-form-container .todo-form button {
+  outline: none;
+  border: blueviolet solid 1px;
+  background: blueviolet;
+  margin: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.todo-label {
+  padding: 5px;
+  font-size: 2rem;
+  display: block;
+  background: blueviolet;
+  margin: 10px auto;
+  width: 40%;
+  text-align: center;
+  color: white;
+}
+.todo-label input {
+  outline-color: yellow;
+}
+
+.complete {
+  text-decoration: line-through;
+  background: blue;
+}
 
 /*# sourceMappingURL=index.css.map */
