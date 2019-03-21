@@ -1,8 +1,8 @@
 import React from "react";
 
 class TodoForm extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       task: ""
     };
@@ -24,6 +24,7 @@ class TodoForm extends React.Component {
   };
 
   render() {
+    // console.log(this.props);
     return (
       <form className="todo-form">
         <input
@@ -33,7 +34,7 @@ class TodoForm extends React.Component {
           onChange={this.inputTask}
         />
         <button onClick={this.addTask}>New Task</button>
-        <button>Remove Task</button>
+        <button onClick={this.props.removeTask}>Remove Task</button>
       </form>
     );
   }

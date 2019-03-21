@@ -15,12 +15,21 @@ html {
 
 h1 {
   font-size: 5rem;
+  text-align: center;
+  color: white;
 }
 
 .app {
   width: 50%;
   margin: 1rem auto;
-  background: burlywood;
+  background: #7c4596;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+::placeholder {
+  font-family: "Roboto", sans-serif;
+  color: white;
 }
 
 .todo-form-container .todo-form {
@@ -29,15 +38,18 @@ h1 {
 }
 .todo-form-container .todo-form input {
   border: none;
-  border-bottom: green solid 2px;
+  border-bottom: white solid 2px;
   padding: 10px;
   margin: 5px;
   outline-color: yellow;
+  background: #ff4b3e;
+  color: white;
+  font-family: Roboto;
 }
 .todo-form-container .todo-form button {
   outline: none;
-  border: blueviolet solid 1px;
-  background: blueviolet;
+  border: #ff4b3e solid 1px;
+  background: #ff4b3e;
   margin: 10px;
   color: white;
   cursor: pointer;
@@ -47,14 +59,14 @@ h1 {
   padding: 5px;
   font-size: 2rem;
   display: block;
-  background: blueviolet;
+  background: #ff4b3e;
   margin: 10px auto;
   width: 40%;
   text-align: center;
   color: white;
 }
 .todo-label input {
-  outline-color: yellow;
+  background: white;
 }
 
 .complete {

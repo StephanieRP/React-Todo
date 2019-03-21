@@ -4,16 +4,19 @@
     justify-content: center;
     input {
       border: none;
-      border-bottom: green solid 2px;
+      border-bottom: white solid 2px;
       padding: 10px;
       margin: 5px;
       outline-color: yellow;
+      background: $task;
+      color: white;
+      font-family: Roboto;
     }
 
     button {
       outline: none;
-      border: blueviolet solid 1px;
-      background: blueviolet;
+      border: $task solid 1px;
+      background: $task;
       margin: 10px;
       color: white;
       cursor: pointer;

@@ -3,28 +3,7 @@ import TodoList from "../src/components/TodoComponents/TodoList";
 import TodoForm from "../src/components/TodoComponents/TodoForm";
 
 // To do List
-const todos = [
-  {
-    task: "Take Out the Trash",
-    id: 1,
-    completed: false
-  },
-  {
-    task: "Wash the dishes ",
-    id: 2,
-    completed: false
-  },
-  {
-    task: "Walk the dog ",
-    id: 3,
-    completed: false
-  },
-  {
-    task: "Study Programming",
-    id: 4,
-    completed: false
-  }
-];
+const todos = [];
 
 class App extends React.Component {
   constructor() {
@@ -62,14 +41,32 @@ class App extends React.Component {
     });
   };
 
+  removeTask = event => {
+    event.preventDefault();
+    let notComplete = [];
+    let trueTask = this.state.todoList.filter(task => {
+      if (task.completed === false) {
+        notComplete.push(task);
+      }
+      return notComplete;
+    });
+    trueTask = notComplete;
+
+    this.setState({ todoList: trueTask });
+  };
+
   render() {
     return (
       <div className="app">
         <h1 className="todo-title">My Todo App</h1>
         <div className="todo-form-container">
-          <TodoForm addNewTask={this.addNewTask} />
+          <TodoForm addNewTask={this.addNewTask} removeTask={this.removeTask} />
         </div>
-        <TodoList taskList={this.state} completeTask={this.completeTask} />
+        <TodoList
+          taskList={this.state}
+          completeTask={this.completeTask}
+          removeTask={this.removeTask}
+        />
       </div>
     );
   }
