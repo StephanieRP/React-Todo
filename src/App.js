@@ -1,5 +1,4 @@
 import React from "react";
-// import Todo from "../src/components/TodoComponents/Todo";
 import TodoList from "../src/components/TodoComponents/TodoList";
 import TodoForm from "../src/components/TodoComponents/TodoForm";
 
@@ -84,16 +83,7 @@ class App extends React.Component {
           addTask={this.addTask}
           clearInput={this.clearInput}
         />
-        <div className="todolist">
-          {this.state.todoList.map((todo, index) => (
-            <TodoList
-              key={todo.id}
-              todoDisplay={todo}
-              completed={todo.completed}
-              completeTask={this.completeTask}
-            />
-          ))}
-        </div>
+        <TodoList taskList={this.state} />
       </div>
     );
   }
